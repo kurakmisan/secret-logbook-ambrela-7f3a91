@@ -39,9 +39,9 @@ def validate_entry(text):
 def main():
     validate_entry(ENTRY)
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "entry.txt")
     try:
+        os.makedirs(out_dir, exist_ok=True)
         with open(path, "w", encoding="ascii", newline="") as f:
             f.write(ENTRY)
     except OSError as exc:
